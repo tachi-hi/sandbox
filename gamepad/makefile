@@ -1,3 +1,3 @@
 all:
-	g++ test.cpp -lglfw
+	g++ gamepad.cpp -lglfw
 
