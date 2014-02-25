@@ -1,28 +1,26 @@
-LATEX = platex
-DVIPDF = dvipdfmx
+#
+# This script executes
+# all the `makefile' in all the subdirectory.
+#
 
-TEXFILE = $(shell ls *.tex)
-DVIFILE = $(TEXFILE:%.tex=%.dvi)
-PDFFILE = $(TEXFILE:%.tex=%.pdf)
+SUBMAKE = $(wildcard ./*/makefile)
+SUBDIR = $(subst /makefile, , $(SUBMAKE) )
 
+define applySubdir
+	for directory in $(SUBDIR); do\
+		make $1 -C $${directory}; \
+	done
+endef
 
-%.dvi: %.tex
-	echo $<
-	$(LATEX) $<
-	$(LATEX) $<
-
-%.pdf: %.dvi
-	$(DVIPDF) $<
+.PHONY: all 
+all: 
+	$(call applySubdir, all)
 
 .PHONY: pdf
-pdf: $(PDFFILE)
-
-.PHONY: clean
-all: 
-	echo $(DVIFILE)
-	make $(DVIFILE)
+pdf: 
+	$(call applySubdir, pdf)
 
 .PHONY: clean
 clean:
-	rm *.dvi *.pdf
+	$(call applySubdir, clean)
 
