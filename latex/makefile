@@ -4,7 +4,7 @@
 #
 
 SUBMAKE = $(wildcard ./*/makefile)
-SUBDIR = $(subst /makefile, , $(SUBMAKE) )
+SUBDIR = $(dir $(SUBMAKE) )
 
 define applySubdir
 	for directory in $(SUBDIR); do\
