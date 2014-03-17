@@ -15,8 +15,6 @@ b = (1, 2, 3, 4, 5, "string", [6, 7])
 
 c = "String"
 
-# Each 
-
 if __name__ == "__main__":
 	print a[0], b[0], c[0] # Index starts by 0
 	print a[0:3], b[0:3], c[0:3]# range
