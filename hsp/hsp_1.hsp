@@ -1,0 +1,63 @@
+; HSPの練習
+; コメントアウト
+
+title "ウィンドウのタイトル"
+
+color 255, 0, 0; 色は指定したらずっとその色が使われる→Undoする方法はあるのか？
+boxf ;boxfill?
+
+color 0, 0, 0
+mes "HSP手習いその1"
+mes "Hello World"
+
+pos 100, 50
+color 255, 255, 0
+mes "Hello World"
+
+pos 200, 150
+color 0, 0, 0
+font "メイリオ", 25, 0
+mes "メイリオ"
+
+font "メイリオ",11, 0
+var = 1
+mes var
+
+repeat 10; repeatからloopがforやwhileに相当
+var++
+mes var
+loop
+
+gosub *subroutine_label; 昔のBASICのgosubのような
+
+
+; 関数の定義
+#module ; module と global で囲む
+#deffunc myfunc int arg1, int arg2, str arg3; 型の指定必須
+	mes arg1
+	mes arg2
+	mes arg3
+	return
+#global
+
+myfunc 1, 2, "3"
+
+; 再帰もかける
+#module
+#defcfunc fibo int n; 戻り値がある場合はdef<<c>>func
+	if n = 1: return 1
+	if n = 2: return 1	
+	return (fibo(n-1) + fibo(n-2))
+#global
+
+mes (fibo (10))
+
+;((fibo (n - 1)) + (fibo (n - 2)))
+
+
+stop
+
+*subroutine_label; 昔のBASICのようなサブルーチン
+	mes "subroutine"
+	return
+
