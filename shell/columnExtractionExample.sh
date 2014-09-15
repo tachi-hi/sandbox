@@ -1,1 +1,1 @@
-cat test.dat | cut -d " " -f 3
+cat test.dat | cut -d " " -f 1,3
