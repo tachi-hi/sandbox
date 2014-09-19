@@ -54,6 +54,24 @@ def pickle_demo(dat):
     print "------------------------------------------------"    
 
 
+def pickle_demo_save(dat, filename):
+    # pickle
+    f = file(filename, 'w')
+    pickle.dump(dat, f) 
+    f.close()
+
+    # unpickle
+    f = file(filename, 'r')
+    dat_unpkl = pickle.load(f)
+    f.close()
+
+    # result
+    print "Deserialized: "
+    print dat_unpkl
+    print "--------------"
+
+
+
 def test_func():
     cl = sampleClass()
     pickle_demo(cl)
@@ -71,3 +89,10 @@ if __name__ == "__main__":
 
     test_func()
     
+    # save
+    pickle_demo_save(12345,"test1.pkl")
+    pickle_demo_save(12.345,"test2.pkl")
+    pickle_demo_save("This is a string","test3.pkl")
+    pickle_demo_save(numpy.arange(3),"test4.pkl")
+    pickle_demo_save(cl, "test5.pkl")
+
