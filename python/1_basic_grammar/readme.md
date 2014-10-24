@@ -15,3 +15,10 @@
 
     import subdir.myPackage
 
+#### 任意ディレクトリ
+sys.path.appendで任意のディレクトリからimportできる。
+
+    sys.path.append("/home/hoge/src")
+    import myPackage
+
+`os.pardir`, `os.path.abspath(__file__)` などを使ってpwdや親ディレクトリを取得して`sys.path.append`の引数を適当に書き換える。
