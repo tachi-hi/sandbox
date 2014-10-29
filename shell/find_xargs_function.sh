@@ -10,3 +10,9 @@ export -f myProc
 
 find . -name "*.txt" | xargs -I {} bash -c "myProc {} 'Hello World'"
 
+my_rm_dir(){ # dangerous (to be modified)
+	cd $1
+	echo * | xargs rm
+	cd -
+}
+export my_rm_dir
