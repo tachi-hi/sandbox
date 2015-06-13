@@ -1,0 +1,162 @@
+[
+{
+"city": "札幌",
+"population": 1914000,
+"pref": "北海道",
+"latitude": 43.0,
+"longitude": 141.3
+}
+,
+{
+"city": "仙台",
+"population": 1045000,
+"pref": "宮城",
+"latitude": 38.2,
+"longitude": 140.8
+}
+,
+{
+"city": "新潟",
+"population": 812000,
+"pref": "新潟",
+"latitude": 37.9,
+"longitude": 139.0
+}
+,
+{
+"city": "さいたま",
+"population": 1222000,
+"pref": "埼玉",
+"latitude": 35.8,
+"longitude": 139.6
+}
+,
+{
+"city": "千葉",
+"population": 962000,
+"pref": "千葉",
+"latitude": 35.6,
+"longitude": 140.1
+}
+,
+{
+"city": "川崎",
+"population": 1425000,
+"pref": "神奈川",
+"latitude": 35.5,
+"longitude": 139.7
+}
+,
+{
+"city": "横浜",
+"population": 3689000,
+"pref": "神奈川",
+"latitude": 35.4,
+"longitude": 139.6
+}
+,
+{
+"city": "相模原",
+"population": 717000,
+"pref": "神奈川",
+"latitude": 35.5,
+"longitude": 139.3
+}
+,
+{
+"city": "静岡",
+"population": 716000,
+"pref": "静岡",
+"latitude": 34.9,
+"longitude": 138.3
+}
+,
+{
+"city": "浜松",
+"population": 800000,
+"pref": "静岡",
+"latitude": 34.7,
+"longitude": 137.7
+}
+,
+{
+"city": "名古屋",
+"population": 2263000,
+"pref": "愛知",
+"latitude": 35.1,
+"longitude": 136.9
+}
+,
+{
+"city": "京都",
+"population": 1474000,
+"pref": "京都",
+"latitude": 35.0,
+"longitude": 135.7
+}
+,
+{
+"city": "大阪",
+"population": 2666000,
+"pref": "大阪",
+"latitude": 34.6,
+"longitude": 135.5
+}
+,
+{
+"city": "堺",
+"population": 842000,
+"pref": "大阪",
+"latitude": 34.5,
+"longitude": 135.4
+}
+,
+{
+"city": "神戸",
+"population": 1544000,
+"pref": "兵庫",
+"latitude": 34.6,
+"longitude": 135.1
+}
+,
+{
+"city": "岡山",
+"population": 709000,
+"pref": "岡山",
+"latitude": 34.5,
+"longitude": 133.9
+}
+,
+{
+"city": "広島",
+"population": 1174000,
+"pref": "広島",
+"latitude": 34.3,
+"longitude": 132.4
+}
+,
+{
+"city": "北九州",
+"population": 977000,
+"pref": "福岡",
+"latitude": 33.8,
+"longitude": 130.8
+}
+,
+{
+"city": "福岡",
+"population": 1463000,
+"pref": "福岡",
+"latitude": 33.5,
+"longitude": 130.4
+}
+,
+{
+"city": "熊本",
+"population": 731000,
+"pref": "熊本",
+"latitude": 32.8,
+"longitude": 130.7
+}
+]
+
