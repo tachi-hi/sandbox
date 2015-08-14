@@ -23,3 +23,12 @@ To do
 - 数字から始まるファイル名は import できない。
 - ファイルを編集したあと再読み込みするときには reload(pkg) などとする。（import pkgname as pkg とした場合）
 
+メモ
+-----
+
+perl の chomp 相当の処理には
+
+    for i in lst:
+      i = i.rstrip()
+
+
