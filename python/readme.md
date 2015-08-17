@@ -32,3 +32,7 @@ perl の chomp 相当の処理には
       i = i.rstrip()
 
 
+## favorites
+
++ [optparse](http://docs.python.jp/2.6/library/optparse.html)
++ [HTMLParse](http://docs.python.jp/2/library/htmlparser.html)
