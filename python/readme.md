@@ -41,6 +41,10 @@ Numpyの練習用に`numpy.py`というファイルを作って
     
 などと書き始めると、1行目のimportで自分自身を読もうとしてしまって本来のnumpyがimportできない。同じディレクトリに`numpy.pyc`などが残っていても同じ問題が起きる。
 
+## Python2用のスクリプトをPython3で使いたい
+
+- 「dict には has_key はない」などと言われて動かないとき
+- `2to3`を試してみる
 
 
 ## favorites
