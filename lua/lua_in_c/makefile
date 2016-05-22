@@ -1,4 +1,8 @@
-INCLUDE:=`pkg-config --cflags lua5.1-c++`
+LUA:=$(shell pkg-config --list-all | grep lua | cut -d" " -f1)
+
+INCLUDE:=$(shell pkg-config --cflags $(LUA))
+LDFLAGS:=$(shell pkg-config --libs $(LUA))
 all:
-	g++ -o test $(INCLUDE) test.cpp -llua5.1
+	echo $(LUA)
+	g++ -o test $(INCLUDE) test.cpp $(LDFLAGS)
 
