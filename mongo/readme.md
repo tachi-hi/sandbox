@@ -33,8 +33,8 @@ Then
 
 Try following commands
 
-    db.test_dollection.find({'x': 1})                          # find data such that x = 1
-    db.test_collection.find({$or :[{'x' : 3}, {'a' : 2}]})     # or
+    db.test_collection.find({'x': 1})                          # find data such that x = 1
+    db.test_collection.find({$or :[{'x' : 3}, {'a' : 2}]})     # either x = 3 or a = 2 is satisfied
     db.test_collection.find({x :{$gt: 2}})                     # greater than
 
 If you want to exit, press Ctrl-D.
