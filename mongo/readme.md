@@ -1,6 +1,18 @@
 ## about
 This is just a memo for me
 
+### Terminology of MongoDB
+
+
+|Ordinary SQL|MongoDB|Python|
+|:---|:---|:---|
+|Database|Database||
+|Table|Collection|List of Dictionaries|
+|Row|Document|Dictionary|
+|Column|Field|Key and Value|
+
+They are not exactly the same but similar.
+
 ### What to do first
 
 install MongoDB and pymongo. see http://api.mongodb.com/python/current/installation.html
