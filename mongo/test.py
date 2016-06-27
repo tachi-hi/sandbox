@@ -92,6 +92,7 @@ def update_example(db_connect):
     # apply the rule to all the document that satisfy the condition
 
     print("$set can be used when we create a new field, as well as when we update the value of a field")
+    print("This \"$set\" is verb. Not noun. Not \"set theory\"")
     show_example(db_connect)
 
 
