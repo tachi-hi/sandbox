@@ -18,6 +18,10 @@ def insert_example(db_connect):
     db_connect["test_collection"].insert_one({'x':5})
     db_connect["test_collection"].insert_one({'x':5})
 
+    # What if there exist duplicate keys in a single document:
+    db_connect["test_collection"].insert_one({'x':100, 'x': -100})
+    # This is actually valid, but the result is {'x' : -100}.
+
     # insert many data simultaneously
     db_connect["test_collection"].insert_many([
         {'y':i, 'z': 20 - i} for i in range(20)]
@@ -40,7 +44,7 @@ def show_example(db_connect):
 def show_example_2(db_connect):
     query = {"$and":
         [{"y":{"$gt": 7}},
-         {"z":{"$gt": 8}}
+         {"z":{"$gt": 8}} # $gt, $gte, $lt, $lte, $ne
         ]
     }
     lst = db_connect["test_collection"].find(query)
@@ -76,6 +80,21 @@ def remove_example(db_connect):
 
     show_example(db_connect)
 
+def update_example(db_connect):
+    """ insert new field to an existing data """
+    db_connect["test_collection"].update({'y': 8}, {'hoge': 1000})
+    # This replaces a document s.t. y = 8 by {'hogehoge': 1000}.
+
+    db_connect["test_collection"].update({'y': 8}, {"$set": {'piyo': 1000}})
+    # This adds a field {'hogehoge': 1000} to a document s.t. y = 8
+
+    db_connect["test_collection"].update({'y': 8}, {"$set": {'z': 'we are updated'}}, multi=True)
+    # apply the rule to all the document that satisfy the condition
+
+    print("$set can be used when we create a new field, as well as when we update the value of a field")
+    show_example(db_connect)
+
+
 
 if __name__ == "__main__":
 
@@ -88,3 +107,6 @@ if __name__ == "__main__":
     show_example_2(db_connect)
 
     remove_example(db_connect)
+
+    insert_example(db_connect)
+    update_example(db_connect)
