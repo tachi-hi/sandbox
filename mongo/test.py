@@ -1,5 +1,6 @@
 
 from pymongo import MongoClient
+from datetime import datetime
 
 def insert_example(db_connect):
     """ insert data to the collection """
@@ -18,7 +19,16 @@ def insert_example(db_connect):
     db_connect["test_collection"].insert_one({'x':5})
     db_connect["test_collection"].insert_one({'x':5})
 
+    # specials
     db_connect["test_collection"].insert_one({'日本語':5})
+    db_connect["test_collection"].insert_one({'time':datetime(2016,7,2,2,31,0)})
+    db_connect["test_collection"].insert_one({'time':datetime(2015,7,2,2,31,0)})
+    db_connect["test_collection"].insert_one({'time':datetime(2015,1,1,0,1,0)})
+    db_connect["test_collection"].insert_one({'time':datetime(2015,1,1,0,0,0)})
+    db_connect["test_collection"].insert_one({'time':datetime(2014,7,2,2,31,0)})
+    db_connect["test_collection"].insert_one({'time':datetime(2013,7,2)})
+    db_connect["test_collection"].insert_one({'time':datetime(1995,7,2)})
+    db_connect["test_collection"].insert_one({'time':datetime(3,7,2)})
 
     # What if there exist duplicate keys in a single document:
     db_connect["test_collection"].insert_one({'x':100, 'x': -100})
@@ -58,6 +68,25 @@ def show_example_2(db_connect):
     else:
         print("empty")
     print("================================")
+
+def show_example_3(db_connect):
+    query = {"time" : {"$gt" : datetime(2015,1,1)}}
+    lst = db_connect["test_collection"].find(query)
+    print("date after (>) ", datetime(2015,1,1))
+    for l in lst:
+        print(l)
+
+    query = {"time" : {"$gte" : datetime(2015,1,1)}}
+    lst = db_connect["test_collection"].find(query)
+    print("date after (>=) ", datetime(2015,1,1))
+    for l in lst:
+        print(l)
+
+    query = {"time" : {"$lt" : datetime(2003,1,1)}}
+    lst = db_connect["test_collection"].find(query)
+    print("date before ", datetime(2003,1,1))
+    for l in lst:
+        print(l)
 
 def remove_example(db_connect):
     print("remove a data that contain \"y = 8\" is deleted.")
@@ -113,3 +142,5 @@ if __name__ == "__main__":
 
     insert_example(db_connect)
     update_example(db_connect)
+
+    show_example_3(db_connect)
