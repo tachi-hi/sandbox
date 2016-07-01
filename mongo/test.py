@@ -18,6 +18,8 @@ def insert_example(db_connect):
     db_connect["test_collection"].insert_one({'x':5})
     db_connect["test_collection"].insert_one({'x':5})
 
+    db_connect["test_collection"].insert_one({'日本語':5})
+
     # What if there exist duplicate keys in a single document:
     db_connect["test_collection"].insert_one({'x':100, 'x': -100})
     # This is actually valid, but the result is {'x' : -100}.
