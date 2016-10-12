@@ -18,3 +18,7 @@ print (z)
 x, y = fun(3)
 print (x)
 print (y)
+
+# valid
+_, _, z = fun(3)
+print(z)
